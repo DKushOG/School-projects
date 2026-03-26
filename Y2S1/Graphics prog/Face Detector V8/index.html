@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Processing App</title>
+  <!-- Load p5.js and ml5.js from official CDNs -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.2/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ml5@0.12.2/dist/ml5.min.js"></script>
+
+  <!-- custom JS files -->
+  <script src="imageProcessing.js"></script>
+  <script src="faceDetection.js"></script>
+  <script src="sketch.js"></script>
+  
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+    }
+    /* collapsing the menu */
+    details {
+      overflow: hidden; 
+      transition: max-height 0.3s ease; 
+    }
+
+    /* Ensure the summary has a pointer cursor */
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    /* Control panel styles */
+    #controlsPanel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100vh;
+      overflow-y: auto;
+      background: #fff;
+      border: 2px solid #ccc;
+      padding: 1rem;
+      box-sizing: border-box;
+      font-size: 14px;
+      z-index: 1000;
+}
+
+    label {
+      margin-right: 0.5rem;
+    }
+
+     /* Range slider styling */
+    input[type=range].slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: #ddd;
+      outline: none;
+      margin: 5px 0 15px 0;
+    }
+    input[type=range].slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #3498db;
+      cursor: pointer;
+      border: 2px solid #666;
+    }
+    input[type=range].slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #3498db;
+      cursor: pointer;
+      border: 2px solid #666;
+    }
+
+    button, input[type=file] {
+      margin-top: 10px;
+      padding: 6px 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    /* CSS */
+    button {
+      padding: 0.6em 2em;
+      border: none;
+      outline: none;
+      color: rgb(255, 255, 255);
+      background: #111;
+      cursor: pointer;
+      position: relative;
+      z-index: 0;
+      border-radius: 10px;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+    }
+
+    button:before {
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      background-size: 400%;
+      z-index: -1;
+      filter: blur(5px);
+      -webkit-filter: blur(5px);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      animation: glowing-button-85 20s linear infinite;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+    }
+
+    @keyframes glowing-button-85 {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    button:after {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #222;
+      left: 0;
+      top: 0;
+      border-radius: 10px;
+    }
+
+    
+
+  </style>
+</head>
+
+<!-- main body -->
+<body>
+  <h1>CM2030 – Graphics Programming: Final Project</h1>
+
+  <div id="controlsPanel">
+    <details open>
+      <summary>Main Controls</summary>
+      <!-- Main sliders -->
+      <p><strong>Threshold Sliders:</strong></p>
+      <label for="thresholdR">Threshold R:</label>
+      <input class="slider" type="range" id="thresholdR" min="0" max="255" value="128"><br>
+
+      <label for="thresholdG">Threshold G:</label>
+      <input class="slider" type="range" id="thresholdG" min="0" max="255" value="128"><br>
+
+      <label for="thresholdB">Threshold B:</label>
+      <input class="slider" type="range" id="thresholdB" min="0" max="255" value="128"><br>
+
+      <label for="thresholdC1">Threshold HSV:</label>
+      <input class="slider" type="range" id="thresholdC1" min="0" max="255" value="128"><br>
+
+      <label for="thresholdC2">Threshold YCbCr:</label>
+      <input class="slider" type="range" id="thresholdC2" min="0" max="255" value="128"><br>
+
+      <summary>Extension Controls</summary>
+      <p><strong>Threshold Sliders:</strong></p>
+      <!-- Extension sliders -->
+      <!-- CMYK Threshold Slider -->
+      <label for="thresholdCMYK">Threshold CMYK:</label>
+      <input class="slider" type="range" id="thresholdCMYK" min="0" max="255" value="128"><br>
+
+      <!-- Binary Threshold Slider -->
+      <label for="thresholdBinary">Binary Threshold:</label>
+      <input class="slider" type="range" id="thresholdBinary" min="0" max="255" value="128"><br>
+
+      <!-- RGB Binary Threshold Slider -->
+    <label for="thresholdRGBBinary">RGB Binary Threshold:</label>
+    <input class="slider" type="range" id="thresholdRGBBinary" min="0" max="255" value="128"><br>
+
+    <label for="cannyLowThreshold">Canny Low Threshold:</label>
+<input class="slider" type="range" id="cannyLowThreshold" min="0" max="255" value="50"><br>
+
+<label for="cannyHighThreshold">Canny High Threshold:</label>
+<input class="slider" type="range" id="cannyHighThreshold" min="0" max="255" value="150"><br>
+
+<label for="inversionIntensity">Color Inversion Intensity:</label>
+<input class="slider" type="range" id="inversionIntensity" min="0" max="1" step="0.01" value="0"><br>
+
+
+      <!-- Checkboxes and buttons for file upload and its options -->
+      <p><strong>File Upload:</strong></p>
+      <label for="uploadImg">Upload an Image:</label><br>
+      <input type="file" id="uploadImg" accept="image/*"><br><br>
+
+      <label>
+        <input type="checkbox" id="toggleMode">
+        Use Static Photo <br>(Press 'd' to capture screenshot)
+      </label><br><br>
+
+      <button id="saveProcessed">Save Processed Image</button><br><br>
+
+      <p><strong>Save a Specific Image:</strong></p>
+      <label for="saveImageSelect">Select Image to Save:</label><br>
+      <select id="saveImageSelect">
+        <optgroup label="Row 1">
+          <option value="original">Webcam/Live</option>
+          <option value="grayBright">Gray+Bright</option>
+        </optgroup>
+
+        <optgroup label="Row 2">
+          <option value="r">Red Channel</option>
+          <option value="g">Green Channel</option>
+          <option value="b">Blue Channel</option>
+        </optgroup>
+
+        <optgroup label="Row 3">
+          <option value="rThresh">R Threshold</option>
+          <option value="gThresh">G Threshold</option>
+          <option value="bThresh">B Threshold</option>
+        </optgroup>
+
+        <optgroup label="Row 4">
+          <option value="originalAgain">Webcam</option>
+          <option value="hsvImage">HSV</option>
+          <option value="ycbcrImage">YCbCr</option>
+        </optgroup>
+
+        <optgroup label="Row 5">
+          <option value="faceDetect">Face Detect</option>
+          <option value="hsvThresh">HSV Threshold</option>
+          <option value="ycbcrThresh">YCbCr Threshold</option>
+        </optgroup>
+
+        <!-- New Extensions optgroup -->
+        <optgroup label="Extensions">
+          <option value="cmykImage">CMYK</option>
+          <option value="cmykThresh">CMYK Threshold</option>
+          <option value="binaryThresh">Binary Threshold</option>
+          <option value="rBinary">Red Binary Threshold</option>
+          <option value="gBinary">Green Binary Threshold</option>
+          <option value="bBinary">Blue Binary Threshold</option>
+          <option value="cannyEdgeImage">Canny Edge Detection</option>
+          <option value="invertedImage">Color Inversion</option>
+        </optgroup>
+        
+      </select><br><br>
+
+      <label>
+        <input type="checkbox" id="mirrorImage"> Mirror Saved Image?
+      </label><br><br>
+
+      <button id="saveSelectedImage">Save Selected Image</button>
+
+      <p style="font-size:13px; margin-top:1rem; color:#444;">
+        - Press 'd' to capture from webcam<br>
+        - Press keys 1-4 to apply filters (live or static), 0 to reset<br>
+        - Check console for any errors
+      </p>
+    </details>
+  </div>
+</body>
+</html>
