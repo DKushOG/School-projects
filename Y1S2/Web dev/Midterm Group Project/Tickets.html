@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrilltopia Amusement Park Ticketing</title>
+</head>
+
+<body>
+    <!--navbar-->
+    <link rel="stylesheet" href="mainStyles.css">
+    <header id="navbar-container" class="flex theme6">
+        <div id="navbar-logo-container" class="flex">
+            <a class="flex" href="index.html">
+                <!-- generated from:https://ideogram.ai/t/explore -->
+                <img alt="Thrilltopia Logo" id="logo-image" src="navbar/assets/navbar_Theme_Park_Logo.png"></a>
+        </div>
+        <nav id="navbar-buttons-menu-container" class="flex">
+            <ul id="navbar-buttons-menu" class="flex">
+                <li class="navbar-buttons-options flex">
+                    <a class="flex" href="index.html">
+                        <!-- downloaded from: https://www.pngwing.com/en/free-png-tfprb -->
+                        <img class="img-shadow" src="navbar/assets/navbar_ThemePark.png" alt="go to Theme Park page">
+                        <div class="link-text">Theme Park</div>
+                    </a>
+                </li>
+                <li class="navbar-buttons-options flex">
+                    <a class="flex" href="FnD.html">
+                        <!-- downloaded from:https://www.pngwing.com/en/free-png-zenqs -->
+                        <img class="img-shadow" src="navbar/assets/navbar_FnD.png" alt="go to Food & Drink page">
+                        <div class="link-text">Food & Drink</div>
+                    </a>
+                </li>
+                <li class="navbar-buttons-options flex">
+                    <a class="flex" href="Tickets.html">
+                        <!-- downloaded from:https://www.pngwing.com/en/free-png-zltma -->
+                        <img class="img-shadow" src="navbar/assets/navbar_Tickets.png" alt="go to Ticketing page">
+                        <div class="link-text">Tickets</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="ticketing-body" class="flex">
+        <div class="ticketing">
+            <h1 class="ticket-title">Amusement Park Ticketing</h1>
+            <div class="viewers-count">
+                <p>Currently, <span id="viewer-count">35</span> people are looking at this website!</p>
+            </div>
+            <!-- Tab navigation -->
+            <ul class="nav-tabs flex">
+                <li>
+                    <a href="#passes">Pass Options</a>
+                </li>
+                <li>
+                    <a href="#tickets">Day Tickets</a>
+                </li>
+            </ul>
+            <!-- Tab content -->
+            <div id="passes" class="tab-content">
+                <div class="pass-options flex">
+                    <div class="pass-option bronze">
+                        <h2>Bronze Pass</h2>
+                        <p>Online starting at</p>
+                        <h3>$99<small>/ea</small></h3>
+                        <a href="#popup-overlay1" class="buy-now-btn">Buy Now</a>
+                        <ul>
+                            <li>Access to all rides and attractions</li>
+                            <li>Valid through 12 months from date of purchase</li>
+                        </ul>
+                    </div>
+                    <div class="pass-option silver">
+                        <div class="popular">Most Popular</div>
+                        <h2>Silver Pass</h2>
+                        <p>Online starting at</p>
+                        <h3>$159<small>/ea</small></h3>
+                        <a href="#popup-overlay1" class="buy-now-btn">Buy Now</a>
+                        <ul>
+                            <li>Access to all rides and attractions</li>
+                            <li>Free parking for pass duration</li>
+                            <li>10% Food & Merchandise Discounts</li>
+                            <li>Valid through 12 months from date of purchase</li>
+                        </ul>
+                    </div>
+                    <div class="pass-option gold">
+                        <h2>Gold Pass</h2>
+                        <p>Online starting at</p>
+                        <h3>$199<small>/ea</small></h3>
+                        <a href="#popup-overlay1" class="buy-now-btn">Buy Now</a>
+                        <ul>
+                            <li>Priority access to all rides and attractions</li>
+                            <li>Free parking for pass duration</li>
+                            <li>15% Food & Merchandise Discounts</li>
+                            <li>Valid through 12 months from date of purchase</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tickets" class="tab-content">
+                <div class="normal-tickets flex">
+                    <div class="ticket-option single">
+                        <h2>Single Entry</h2>
+                        <p>Online starting at</p>
+                        <h3>$49<small>/ea</small></h3>
+                        <a href="#popup-overlay1" class="buy-now-btn">Buy Now</a>
+                        <ul>
+                            <li>Access to all rides and attractions for one person</li>
+                            <li>Valid through Day of Visit</li>
+                        </ul>
+                    </div>
+                    <div class="ticket-option family">
+                        <div class="popular">4 for the price of 3</div>
+                        <h2>Family Pack</h2>
+                        <p>Online starting at</p>
+                        <h3>$149<small>/ea</small></h3>
+                        <a href="#popup-overlay1" class="buy-now-btn">Buy Now</a>
+                        <ul>
+                            <li>Access for up to 4 family members.</li>
+                            <li>Valid through Day of Visit</li>
+                        </ul>
+                    </div>
+                    <div class="ticket-option vip">
+                        <h2>VIP Entry</h2>
+                        <p>Online starting at</p>
+                        <h3>$99<small>/ea</small></h3>
+                        <a href="#popup-overlay1" class="buy-now-btn">Buy Now</a>
+                        <ul>
+                            <li>Priority access to all rides and attractions for one person</li>
+                            <li>General Parking included</li>
+                            <li>10% Food & Merchandise Discounts</li>
+                            <li>Valid through Day of Visit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Table for easy comparison of ticket options-->
+            <h1 class="ticket-title">Compare all Tickets and Passes Options</h1>
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="blank-cell">blank</th>
+                            <th>Bronze Pass</th>
+                            <th>Silver Pass</th>
+                            <th>Gold Pass</th>
+                            <th>Single Entry</th>
+                            <th>Family Pack</th>
+                            <th>VIP Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Access to Rides & Attractions</td>
+                            <td class="good">Unlimited</td>
+                            <td class="good">Unlimited</td>
+                            <td class="good">Priority</td>
+                            <td class="good">One day access</td>
+                            <td class="good">One day access</td>
+                            <td class="good">One day access</td>
+                        </tr>
+                        <tr>
+                            <td>Validity</td>
+                            <td class="good">Through 2024</td>
+                            <td class="good">Through 2024</td>
+                            <td class="good">Through 2024</td>
+                            <td class="good">Day of visit</td>
+                            <td class="good">Day of visit</td>
+                            <td class="good">Day of visit</td>
+                        </tr>
+                        <tr>
+                            <td>Parking</td>
+                            <td class="bad">General</td>
+                            <td class="good">Preferred</td>
+                            <td class="good">Preferred</td>
+                            <td class="bad">General</td>
+                            <td class="bad">General</td>
+                            <td class="good">Preferred</td>
+                        </tr>
+                        <tr>
+                            <td>Discount for Food & Merchandise</td>
+                            <td class="bad">Standard</td>
+                            <td class="good">10%</td>
+                            <td class="good">15%</td>
+                            <td class="bad">Standard</td>
+                            <td class="bad">Standard</td>
+                            <td class="good">10%</td>
+                        </tr>
+                        <tr>
+                            <td>Price</td>
+                            <td>
+                                <h3>$99<small>/ea</small></h3><a href="#popup-overlay1" class="buy-now-btn">Buy</a>
+                            </td>
+                            <td>
+                                <h3>$159<small>/ea</small></h3><a href="#popup-overlay1" class="buy-now-btn">Buy</a>
+                            </td>
+                            <td>
+                                <h3>$199<small>/ea</small></h3><a href="#popup-overlay1" class="buy-now-btn">Buy</a>
+                            </td>
+                            <td>
+                                <h3>$49<small>/ea</small></h3><a href="#popup-overlay1" class="buy-now-btn">Buy</a>
+                            </td>
+                            <td>
+                                <h3>$149<small>/ea</small></h3><a href="#popup-overlay1" class="buy-now-btn">Buy</a>
+                            </td>
+                            <td>
+                                <h3>$99<small>/ea</small></h3><a href="#popup-overlay1" class="buy-now-btn">Buy</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="popup-overlay1" class="overlay">
+                <div class="popup">
+                    <form class="form-container">
+                        <h1>Purchase Ticket</h1>
+                        <label for="fullName">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="ticketType">Ticket Type:</label>
+                        <select id="ticketType" name="ticketType" required>
+                            <option value="" disabled selected>Select your option</option>
+                            <option value="single">Single Entry - $49</option>
+                            <option value="family">Family Pack - $149</option>
+                            <option value="vip">VIP Entry - $99</option>
+                            <option value="bronze">Bronze Membership - $99</option>
+                            <option value="silver">Silver Membership - $159</option>
+                            <option value="gold">Gold Membership - $199</option>
+                        </select>
+                        <input type="submit" class="btn">
+                        <a href="#" class="btn cancel">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--footer-->
+    <footer class="flex" id="footer-container">
+        <div class="footer-row flex">
+            <div class="footer-column">
+                <strong>Help</strong>
+                <p>Call us at <a href="tel:+1234567890">+1 234 567 890</a></p>
+                <p>Email us at <a href="mailto:info@thrilltopiathemepark.com">info@thrilltopia.com</a></p>
+            </div>
+            <div class="footer-column">
+                <strong>Site Links</strong>
+                <a href="index.html">Theme Park</a><br>
+                <a href="FnD.html">Food and Beverages</a><br>
+                <a href="Tickets.html">Buy Tickets Now</a>
+            </div>
+            <div class="footer-column">
+                <strong>Stay Connected</strong>
+                <div class="social-links flex">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <!--Image downloaded from https://www.svgrepo.com/svg/452196/facebook-1 -->
+                        <img src="footer/assets/facebook-icon.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <!--Image downloaded from https://www.svgrepo.com/svg/452229/instagram-1 -->
+                        <img src="footer/assets/instagram-icon.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.x.com" target="_blank">
+                        <!--Image downloaded from https://www.iconfinder.com/icons/11053970/x_logo_twitter_new_brand_x.com_social_icon -->
+                        <img src="footer/assets/x-icon.png" alt="X">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            &copy; 2024 Thrilltopia Theme Park. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

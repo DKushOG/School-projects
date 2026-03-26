@@ -1,0 +1,1161 @@
+:root {
+	/* main colour palette of the sites */
+	--mainColorPalette1: #5d64c3;
+	--mainColorPalette2: #2b5688;
+	--mainColorPalette3: linear-gradient(#b0e0e6, #b29fdc, #5d84d8);
+	--mainColorPalette4: #eef;
+	--mainColorPalette5: #5d84d8;
+	--mainColorPalette6: #8ab2d8;
+	--mainColorPalette8: #77b1a4;
+
+	/* matching colour for text against mainColorPalette */
+	--textColorPalette1: #dde1bd;
+	--textColorPalette2: #eef5e4;
+	--textColorPalette3: #133477;
+	--textColorPalette4: #0056b3;
+	--textColorPalette5: #e0eaff;
+	--textColorPalette7: #fbf2e3;
+	--textColorPalette8: #062caf;
+}
+
+body {
+	margin: 0px;
+	overflow-x: hidden;
+}
+
+/* make all text in this font family */
+html * {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+	background-image: linear-gradient(powderblue, rgb(178, 159, 220), rgb(93, 132, 216));
+}
+
+/* general site wide classes */
+.flex {
+	display: flex;
+}
+
+.relative {
+	position: relative;
+}
+
+.img-shadow {
+	filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.3));
+}
+
+/* color theme, just add these classes to the divs to change their bg color and text color */
+.theme1 {
+	background-color: var(--mainColorPalette1);
+	color: var(--textColorPalette1);
+}
+.theme2 {
+	background-color: var(--mainColorPalette2);
+	color: var(--textColorPalette2);
+}
+.theme3 {
+	background-image: var(--mainColorPalette3);
+	color: var(--textColorPalette3);
+}
+.theme4 {
+	background-color: var(--mainColorPalette4);
+	color: var(--textColorPalette4);
+}
+.theme5 {
+	background-color: var(--mainColorPalette5);
+	color: var(--textColorPalette5);
+}
+
+/* navbar css */
+#navbar-container {
+	background-color: var(--mainColorPalette6);
+	height: 15vh;
+	flex-flow: row nowrap;
+
+	* {
+		box-sizing: border-box;
+		text-decoration: none;
+		text-align: center;
+		justify-content: center;
+	}
+
+	ul {
+		padding-inline-start: 0;
+		margin-block-start: 0;
+		margin-block-end: 0;
+		height: 100%;
+		flex: 1;
+		align-content: stretch;
+	}
+
+	li {
+		list-style-type: none;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* make all links stretch to size of the list */
+	a {
+		height: 100%;
+		width: 100%;
+		flex-flow: column;
+	}
+
+	li:nth-child(1) > a {
+		color: #1e2348;
+	}
+	li:nth-child(2) > a {
+		color: #5e2857;
+	}
+	li:nth-child(3) > a {
+		color: #8a8f00;
+	}
+
+	a > img {
+		max-width: 100%;
+		max-height: 100%;
+		width: auto;
+		align-self: center;
+	}
+
+	/* gives space for text */
+	li > a > img {
+		max-height: 80%;
+	}
+
+	li > a > div {
+		height: 20%;
+	}
+
+	#navbar-logo-container {
+		flex: 2 0 0;
+		position: relative;
+	}
+
+	#navbar-buttons-menu-container {
+		flex: 3;
+		position: relative;
+	}
+
+	#navbar-buttons-menu {
+		flex-flow: row wrap;
+		align-items: stretch;
+		align-content: stretch;
+	}
+
+	.navbar-buttons-options {
+		flex: 1 0 0;
+		overflow-x: hidden;
+		height: 100%;
+	}
+
+	a:after {
+		position: absolute;
+		top: 1.5vh;
+		right: 0px;
+		content: "";
+		display: block;
+		width: 1px;
+		height: 12vh;
+		border-left: 1px solid #888888;
+		box-sizing: border-box;
+	}
+}
+
+/* theme park css */
+/* image slider */
+#theme-park-body {
+	.slider {
+		overflow: hidden;
+	}
+
+	.slider_set {
+		position: relative;
+		width: 500%;
+		animation: slide1 25s infinite;
+	}
+
+	.slider_set img {
+		width: 20%;
+	}
+
+	.message {
+		align-items: flex-end;
+		font-size: 25px;
+		font-family: Georgia, "Times New Roman", Times, serif;
+		justify-content: center;
+	}
+
+	.message img {
+		height: 80px;
+		padding: 15px;
+	}
+
+	/* section headings */
+	.headings {
+		font-size: 30px;
+		justify-content: center;
+	}
+
+	/* content description */
+	.box {
+		display: block;
+		overflow: hidden;
+	}
+
+	.info {
+		font-size: 23px;
+		text-align: left;
+		padding-top: 50px;
+		padding-left: 120px;
+		justify-content: center;
+	}
+
+	.info img {
+		height: 150px;
+		padding-right: 20px;
+	}
+
+	/* photo carousel */
+	.carousel {
+		background-color: var(--mainColorPalette6);
+		position: relative;
+		height: 225px;
+		/* padding: 10px; */
+		overflow: hidden;
+	}
+
+	.carousel_set {
+		position: relative;
+		height: 200px;
+		align-items: center;
+		animation: carousel1 25s linear infinite;
+		margin: auto;
+	}
+
+	.carousel_set img {
+		height: 200px;
+		border: 1px solid black;
+		border-radius: 10%;
+		margin: 30px;
+	}
+
+	/* attractions, rides and events */
+	.attractions-mainpage {
+		flex-wrap: wrap;
+		justify-content: left;
+		align-items: center;
+		padding: 20px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+		label {
+			width: 100%;
+			text-decoration: underline;
+			padding-left: 30px;
+			align-items: flex-end;
+			display: block;
+			font-size: 1.17em;
+			margin-block-start: 1em;
+			margin-block-end: 1em;
+			margin-inline-start: 0px;
+			margin-inline-end: 0px;
+			font-weight: bold;
+			unicode-bidi: isolate;
+		}
+
+		.attractions {
+			flex: 1;
+			width: 50%;
+			max-width: 50%;
+			min-width: 50%;
+			padding: 30px;
+			box-sizing: border-box;
+			justify-content: start;
+		}
+	}
+
+	.attractions-info {
+		padding: 5px;
+		border-radius: 5px;
+		border: 1px solid #ddd;
+
+		h3 {
+			margin: 0 0 10px;
+			color: #0056b3;
+		}
+	}
+
+	.attractions-info p {
+		margin: 0;
+		color: #555;
+	}
+
+	.attractions-info img {
+		margin: 0;
+		width: 100%;
+		align-items: center;
+		color: #555;
+	}
+}
+
+/* theme park animations */
+@keyframes slide1 {
+	0%,
+	20% {
+		left: 0;
+	}
+
+	25%,
+	45% {
+		left: -100%;
+	}
+
+	50%,
+	70% {
+		left: -200%;
+	}
+
+	75%,
+	95% {
+		left: -300%;
+	}
+
+	100% {
+		left: -400%;
+	}
+}
+
+@keyframes carousel1 {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* fnd page */
+#fnd-body {
+	/* https://stackoverflow.com/questions/3354279/default-target-with-css */
+	& > *,
+	& > *:target ~ .default {
+		display: none;
+	}
+
+	& > #fnd-main:target ~ .fnd-main,
+	& > #fnd-menus:target ~ .fnd-menus,
+	& > .default {
+		display: block;
+	}
+}
+
+.fnd-main {
+	.carousel-container {
+		position: relative;
+		width: 400%;
+		overflow: hidden;
+		height: 600px;
+		animation: slide2 15s infinite;
+	}
+
+	/*Individual slide styles */
+	.carousel-slide {
+		flex: 1 0 0;
+		height: 100%;
+
+		& > img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.carousel-text {
+		position: relative;
+		bottom: 20%;
+		left: 10%;
+		right: 10%;
+		background-color: rgba(0, 0, 0, 0.5);
+		padding: 10px;
+		color: white;
+		width: 80%;
+
+		p {
+			margin: 0;
+			padding: 0;
+		}
+
+		h2 {
+			margin: 0;
+			padding: 0;
+			font-size: 1.5em;
+		}
+	}
+
+	.introimgcontainer {
+		position: relative;
+		text-align: left;
+		text-shadow: 2px 2px 4px #000000;
+		padding: 10px;
+	}
+
+	/* left img text */
+	.introtextleft {
+		position: absolute;
+		top: 100px;
+		left: 16px;
+		color: var(--textColorPalette7);
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 10px;
+		padding: 10px;
+	}
+
+	.foodtitle {
+		text-shadow: 2px 2px 4px #000000;
+		height: 75px;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+
+		img {
+			width: 75px;
+			height: 75px;
+		}
+	}
+
+	/* food images */
+	.imagesect {
+		text-align: center;
+		padding: 20px;
+		background-color: var(--mainColorPalette3);
+	}
+
+	.image-container {
+		display: inline-block;
+		position: relative;
+		margin: 10px;
+		transition: opacity 0.3s ease-in-out;
+
+		img {
+			display: block;
+			max-width: 100%;
+			border-radius: 10px;
+			opacity: 0.7;
+			width: 400px;
+			height: 400px;
+			/* Initially translucent */
+		}
+
+		&:hover {
+			img {
+				opacity: 1;
+				/* Fully opaque on hover */
+			}
+
+			.image-info {
+				bottom: 10px;
+				/* Display info box below the image on hover */
+				opacity: 1;
+				/* Make info box fully opaque */
+			}
+		}
+
+		.image-info {
+			position: absolute;
+			bottom: -50px;
+			/* Initially hidden below the image */
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: rgba(255, 255, 255, 0.9);
+			/* Semi-transparent background */
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			transition: bottom 0.3s ease-in-out;
+			opacity: 0;
+			/* Initially hidden */
+		}
+	}
+
+	/* menu bar */
+	.menubarcontainer {
+		background: var(--mainColorPalette2);
+		justify-content: space-evenly;
+		flex-direction: row;
+		text-align: center;
+		font-size: large;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	.menubarlink {
+		width: 200px;
+		height: 150px;
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+
+		&:hover img {
+			opacity: 50%;
+		}
+	}
+
+	.buttontext {
+		text-align: center;
+		align-content: center;
+		color: var(--textColorPalette5);
+		text-shadow: 2px 2px 2px #070000;
+		background-color: rgba(0, 0, 0, 0.7);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 10px;
+		height: 40px;
+		width: 60px;
+
+		p {
+			margin-block-start: 0px;
+			margin-block-end: 0px;
+		}
+	}
+
+	.locationbar {
+		/*downloaded from: https://www.dreamstime.com/photos-images/food-banner.html */
+		background-image: url(fnd/assets/FoodBanner.webp);
+		text-align: center;
+		color: var(--textColorPalette4);
+		text-shadow: 2px 2px 4px gray;
+		height: 200px;
+		justify-content: center;
+		padding: 10px;
+		font-size: x-large;
+
+		h1 {
+			margin: auto;
+		}
+	}
+
+	/* map display section */
+	.theme-park-map-section {
+		background-color: var(--mainColorPalette8);
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.map-container {
+		flex: 1;
+		min-width: 300px;
+		max-width: 50%;
+		padding: 10px;
+
+		img {
+			width: 100%;
+			height: auto;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+		}
+	}
+
+	.restaurant-info {
+		flex: 1;
+		min-width: 300px;
+		max-width: 50%;
+		padding: 20px;
+		box-sizing: border-box;
+		order: -1;
+		/* This shifts the restaurant info to the left */
+
+		h2 {
+			margin-top: 0;
+			color: #333;
+		}
+	}
+
+	.restaurant {
+		background-color: var(--mainColorPalette4);
+		margin-bottom: 20px;
+		padding: 15px;
+		border-radius: 5px;
+		border: 1px solid #ddd;
+
+		h3 {
+			margin: 0 0 10px;
+			color: var(--textColorPalette4);
+		}
+		p {
+			margin: 0;
+			color: #555;
+		}
+	}
+}
+
+.fnd-menus {
+	background-color: var(--mainColorPalette5);
+
+	.menucontainermain {
+		height: 750px;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.menucontainermain h1 {
+		text-align: center;
+	}
+
+	.menucontainer1,
+	.menucontainer2,
+	.menucontainer3 {
+		flex-direction: column;
+		text-align: left;
+		height: 400px;
+		width: 250px;
+	}
+
+	.menustyles {
+		background-color: var(--mainColorPalette4);
+		padding: 20px;
+		border-radius: 10px;
+		padding: 20px;
+		text-align: left;
+		justify-content: center;
+	}
+
+	.backButton {
+		display: block;
+		position: relative;
+		z-index: 1;
+		border-radius: 10%;
+		width: 5vw;
+		height: 5vh;
+		left: 3vw;
+		top: 1vh;
+		align-content: center;
+		text-align: center;
+		text-decoration: none;
+		background-color: var(--mainColorPalette4);
+		color: black;
+
+		&:hover {
+			opacity: 50%;
+		}
+	}
+
+	.pseudo-list {
+		display: list-item;
+		list-style-position: inside;
+	}
+}
+
+/* fnd animation keyframes */
+@keyframes slide2 {
+	0%,
+	30% {
+		left: 0;
+	}
+
+	33%,
+	63% {
+		left: -100%;
+	}
+
+	66%,
+	96% {
+		left: -200%;
+	}
+
+	100% {
+		left: -300%;
+	}
+}
+
+/* Ticketing Page */
+#ticketing-body {
+	font-family: Arial, sans-serif;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+
+	/* CSS for Background of Ticketing Box */
+	.ticketing {
+		background-color: var(--mainColorPalette4);
+		padding: 20px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+		max-width: 1200px;
+		width: 100%;
+	}
+
+	/* CSS for Title of Ticketing page */
+	.ticket-title {
+		text-align: center;
+		color: var(--textColorPalette4);
+		margin-bottom: 20px;
+	}
+
+	/* Align Tab Options to Center of Page */
+	.nav-tabs {
+		justify-content: center;
+		list-style-type: none;
+		padding: 0;
+		margin-bottom: 20px;
+	}
+
+	/* Separate the 2 Tabs by 10px */
+	.nav-tabs li {
+		margin: 0 10px;
+	}
+
+	/* CSS for Tab Options */
+	.nav-tabs a {
+		text-decoration: none;
+		padding: 10px 20px;
+		background-color: var(--mainColorPalette1);
+		color: var(--textColorPalette2);
+		border-radius: 4px;
+	}
+
+	/* Simple Animation using Colour Change when Hover Over Tab Options*/
+	.nav-tabs a:hover,
+	.nav-tabs a:focus {
+		background-color: var(--mainColorPalette2);
+	}
+
+	/* Hides the Tab Contents Initially */
+	.tab-content {
+		display: none;
+	}
+
+	/* Use Block Display for Neater Appearance */
+	.tab-content:target {
+		display: block;
+	}
+
+	/* Separate the Tab Contents by 20px */
+	/* Leave Space between Tab Contents and Title Below */
+	.pass-options,
+	.normal-tickets {
+		justify-content: space-around;
+		gap: 20px;
+		margin-bottom: 40px;
+	}
+
+	/* CSS for Tab Contents */
+	.pass-option,
+	.ticket-option {
+		background-color: var(--mainColorPalette6);
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		text-align: center;
+		flex: 1;
+		max-width: 300px;
+	}
+
+	/* CSS for Title within Tab */
+	.pass-option h2,
+	.ticket-option h2 {
+		color: var(--textColorPalette3);
+		margin-bottom: 10px;
+	}
+
+	/* CSS for Phrase "Online starting at" within Tab */
+	.pass-option p,
+	.ticket-option p {
+		color: var(--textColorPalette3);
+		margin: 10px 0;
+	}
+
+	/* CSS for Price within Tab */
+	.pass-option h3,
+	.normal-tickets h3 {
+		color: var(--textColorPalette3);
+		margin: 10px 0;
+		font-size: 2em;
+	}
+
+	/* Special Styling to make /ea small to emphasize on price */
+	.pass-option small,
+	.ticket-option small {
+		font-size: 0.5em;
+	}
+
+	/* CSS for Buy Button */
+	.buy-now-btn {
+		background-color: var(--mainColorPalette1);
+		color: var(--textColorPalette2);
+		border: none;
+		padding: 10px;
+		border-radius: 5px;
+		cursor: pointer;
+		margin-top: 20px;
+		width: 30%;
+		text-decoration: none;
+		display: inline-block;
+		text-align: center;
+	}
+
+	/* Simple Animation using Colour Change when Hover Over Buy Button*/
+	.buy-now-btn:hover {
+		background-color: var(--mainColorPalette2);
+	}
+
+	/* CSS for Details of Passes within Tab */
+	/* Gets Rid of bullet points and align the text to the left */
+	.pass-option ul,
+	.ticket-option ul {
+		list-style-type: none;
+		padding: 0;
+		text-align: left;
+		margin-top: 20px;
+	}
+
+	/* CSS for Details of Passes within Tab */
+	.pass-option li,
+	.ticket-option li {
+		margin-bottom: 10px;
+		color: var(--textColorPalette3);
+	}
+
+	/* Background Colour Bronze */
+	.pass-option.bronze {
+		background-color: #e7cfae;
+	}
+
+	/* Background Colour Silver */
+	.pass-option.silver {
+		background-color: #e5e4e2;
+	}
+
+	/* Background Colour Gold */
+	.pass-option.gold {
+		background-color: #f0e68c;
+	}
+
+	/* Table styles */
+	.table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 20px 0;
+		font-size: 1em;
+		font-family: "Arial", sans-serif;
+		text-align: left;
+		table-layout: fixed;
+
+		/* Ensure that the word blank does not show */
+		.blank-cell {
+			visibility: hidden;
+		}
+
+		/* Applied colours to cells indicating standard options and improved options */
+		th,
+		td {
+			color: var(--textColorPalette3);
+			padding: 10px;
+			border: 1px solid var(--mainColorPalette2);
+			text-align: center; /* Center-align text */
+			width: 120px;
+
+			/* Red Signifies Standard Options */
+			&.bad {
+				background-color: rgb(243, 78, 78);
+				color: var(--textColorPalette4);
+			}
+
+			/* Green Signifies Improved Options */
+			&.good {
+				background-color: rgb(22, 183, 22);
+				color: var(--textColorPalette4);
+			}
+
+			/* CSS for Price */
+			/* Special Styling to make /ea small to emphasize on price */
+			h3 {
+				font-size: 2em;
+				margin: 0.5px;
+
+				small {
+					font-size: 0.5em;
+				}
+			}
+		}
+	}
+
+	/* The popup form - hidden by default */
+	.overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--mainColorPalette3); /* Covers Background */
+		z-index: 500;
+	}
+
+	/* CSS for Popup */
+	.popup {
+		display: none;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 300px;
+		padding: 20px;
+		background: white;
+		border: 1px solid #ccc;
+		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+		z-index: 1000;
+	}
+
+	/* Add styles to the form container */
+	.form-container {
+		max-width: 500px;
+		padding: 10px;
+
+		/* Input fields */
+		input[type="text"],
+		input[type="email"],
+		select {
+			width: 100%;
+			padding: 15px 4px;
+			margin: 5px 0 22px 0;
+			border: none;
+			background: white;
+
+			/* When the inputs get focus, do something */
+			&:focus {
+				background-color: #ddd;
+				outline: none;
+			}
+		}
+
+		/* Same styling as above fields for drop-down menu */
+		select option {
+			padding: 10px;
+			background: #ddd;
+		}
+
+		/* Set a style for the submit/login button */
+		.btn {
+			background-color: var(--mainColorPalette1);
+			font-size: large;
+			color: var(--textColorPalette2);
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			margin-bottom: 10px;
+			opacity: 0.8;
+			text-align: center;
+			text-decoration: none;
+			border-radius: 4px;
+
+			/* Add some hover effects to buttons */
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+		/* Add a red background color to the cancel button */
+		.cancel {
+			background-color: red;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			padding: 16px 0px;
+			color: var(--textColorPalette2);
+			border-radius: 4px;
+		}
+	}
+
+	#popup-overlay1:target,
+	#popup1:target {
+		display: block; /* The popup form - hidden by default */
+		.overlay {
+			display: block;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 500;
+		}
+
+		.popup {
+			display: block;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 300px;
+			padding: 20px;
+			background: var(--mainColorPalette4);
+			border: 1px solid #ccc;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			z-index: 1000;
+		}
+
+		#popup-overlay1:target .popup {
+			display: block;
+		}
+
+		#popup-overlay1:target {
+			display: block;
+		}
+	}
+
+	/* Styling for the number of people viewing the website */
+	.viewers-count {
+		font-size: 1.5em;
+		color: var(--textColorPalette3);
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	/* Styling for popular option on top of passes */
+	.popular {
+		display: inline-block;
+		background-color: var(--mainColorPalette1);
+		color: var(--textColorPalette2);
+		padding: 10px 20px;
+		border-radius: 25px;
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	}
+}
+
+/* footer css */
+footer {
+	background-color: var(--mainColorPalette2);
+	color: white; /* Text color */
+	text-align: center; /* Center-align text */
+	padding: 30px 0;
+	position: relative;
+	bottom: 0;
+	flex-direction: column;
+	align-items: center;
+
+	.footer-row {
+		justify-content: space-between;
+		flex-wrap: wrap;
+		max-width: 1200px;
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	/* Align Titles in Footer to the Left */
+	.footer-column {
+		flex: 1;
+		min-width: 150px;
+		margin: 0 20px;
+		text-align: left;
+	}
+
+	/* Simple Animation allowing Images to enlarge when Hovered Over */
+	.social-links {
+		margin-top: 10px;
+		align-items: flex-start;
+		flex-direction: row;
+
+		img {
+			width: 30px;
+			margin: 0 10px;
+			vertical-align: middle;
+			transition: transform 0.3s ease;
+
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+	}
+
+	/* CSS for Titles in Footer*/
+	strong {
+		display: block;
+		margin-bottom: 10px;
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	/* White-coloured Links that turn Yellow when Hovered Over */
+	a {
+		color: white;
+		text-decoration: none;
+		margin: 5px 0;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: #ffd700; /* Gold color on hover */
+		}
+	}
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+	#theme-park-body > .attractions-mainpage > .attractions {
+		width: 100%;
+		min-width: 100%;
+		max-width: 100%;
+	}
+
+	footer {
+		.footer-row {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.footer-column {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.footer-links,
+		.social-links {
+			align-items: center;
+		}
+	}
+
+	#fnd-main {
+		.theme-park-section {
+			flex-direction: column;
+		}
+
+		.map-container,
+		.restaurant-info {
+			max-width: 100%;
+		}
+
+		.restaurant-info {
+			order: 0;
+			/* Reset order in column layout */
+		}
+	}
+
+	#ticketing-body {
+		.pass-option,
+		.ticket-option {
+			margin-bottom: 7px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.pass-options,
+		.normal-tickets {
+			display: block;
+		}
+
+		.container {
+			overflow-x: auto;
+		}
+	}
+}

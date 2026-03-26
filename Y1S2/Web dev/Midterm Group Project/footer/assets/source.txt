@@ -1,0 +1,8 @@
+facebook-icon.png
+https://www.svgrepo.com/svg/452196/facebook-1
+
+instagram-icon.png
+https://www.svgrepo.com/svg/452229/instagram-1
+
+x-icon.png
+https://www.iconfinder.com/icons/11053970/x_logo_twitter_new_brand_x.com_social_icon
