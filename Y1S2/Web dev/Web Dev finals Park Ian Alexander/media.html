@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- javascript helpers and animations -->
+    <script src="Javascript_helpers/dropMenu.js"></script>
+    <script src="Javascript_helpers/projectscroll.js"></script>
+    <script src="Javascript_helpers/contentAppear.js"></script>
+    <title>Media - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="headerleft">
+            <!-- logo links back to main index -->
+            <a href="index.html">
+                <img src="assets/hermeslogo.png" alt="Logo">
+            </a>
+        </div>
+        <!-- navbar with links to the other pages -->
+        <nav>
+            <!-- initally hidden menu toggle button for small viewports -->
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- end of header -->
+     <!-- main project media -->
+    <main id="projectMedia">
+        <!-- media section -->
+        <section class="media">
+            <!-- page banner text -->
+            <div id="text-focus-in" class="pagebanner">
+                <h1>Projects of Note</h1>
+            </div>
+            <!-- media items -->
+             <!-- Hermes description box -->
+            <div class="fade-in-top media-item">
+                <div class="hermesdesc-maincontainer">
+                    <h1>Hermes</h1>
+                    <div class="hermesdesc-subcontainer">
+                        <div class="hermesdesc-insidecontainer1">
+                            <h2>Autonomous Delivery Drones</h2>
+                            <p>At Hermes, our autonomous drones use advanced AI and cutting-edge engineering to navigate complex environments with minimal human input. Equipped with smart sensors and an efficient propulsion system, they deliver packages safely and quickly, even in challenging conditions.</p>
+                        </div>
+                        <div class="hermesdesc-insidecontainer2">
+                            <img src="assets/hermeslogo.png">
+                            <a href="https://www.dji.com/sg" target="_blank">
+                                <h2>More on our Website!</h2>
+                            </a>
+                        </div>
+                        <div class="hermesdesc-insidecontainer3">
+                            <h2>Reliable Deliveries</h2>
+                            <p>Hermes guarantees reliable delivery through real-time GPS tracking and dynamic route adjustments. Our drones ensure prompt, secure deliveries, adapting to issues like weather or traffic, so packages arrive on time and in perfect condition.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- video 1 box and description -->
+            <div class="fade-in-right media-item">
+                <div>
+                    <h2>Engineering</h2>
+                    <!-- video element and source controls -->
+                    <video controls>
+                        <source src="assets/ProjectMOV1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div id="catapult" class="desc-text-box">
+                    <h2>Catapult Project (Singapore Polytechnic)</h2>
+                    <p>My first exposure to true engineering and prototyping, <br>my groupmates and i worked to develop a working catapult with the objective <br>to knock down the maximum amount of targets. <br>We achieved the highest score amongst our peers.</p>
+                </div>
+            </div>
+            <!-- second video box and description -->
+            <div class="fade-in-left media-item">
+                <div>
+                    <h2>Unmanned Aerial Vehicles (UAV)</h2>
+                    <!-- video element and source controls -->
+                    <video controls>
+                        <source src="assets/ProjectMOV2.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="desc-text-box">
+                    <h2>Radio Controlled UAV hobby</h2>
+                    <p>My interest in aeronautics extends beyond school, where I build RC aircraft for recreational flying purposes. <br>A deep understanding of aeronautical engineering is needed to be able to properly build the models, <br>balance weight and center of gravity as well as program the electronics for the control surfaces.</p>
+                </div>
+            </div>
+            <!-- last project media item featuring report -->
+            <div class="fade-in-right media-item">
+                <div class="altprojectmedia">
+                    <h2>Selective Laser Melting Project</h2>
+                    <a href="assets/FYP report.pdf" target="_blank">
+                        <img src="assets/Report.jpg">
+                        <p>Download/View PDF</p>
+                    </a>
+                </div>
+                <div class="desc-text-box">
+                    <h2>3D Printing and more</h2>
+                    <p>Selective laser melting(SLM) is a form of 3D printing where metal powder, in this case steel, is layered on a template and a high powered laser to melt the powder layer by layer to create a 3D object. I had the privelege of working on such a topic for my Final year Project in Singapore Polytechnic. <br>The link to the left leads to a detailed report of my project.</p>
+                </div>
+            </div>
+            <!-- end of media items -->
+            <!-- image container bottom of page -->
+            <div class="fade-in-btm media-item">
+                <div class="bottom-media-container">
+                    <h2>More Media</h2>
+                    <div class="bottom-media1">
+                        <img src="assets/Catapoot.JPG">
+                        <img src="assets/Catapult2.PNG">
+                        <img src="assets/MeNPlane.jpg">
+                    </div>
+                    <div class="bottom-media2">
+                        <img src="assets/MeNPlane2.jpg">
+                        <img src="assets/SLM1.jpg">
+                        <img src="assets/SLM2.jpg">
+                    </div>
+                </div>
+            </div>
+            <!-- image container end -->
+        </section>
+    </main>
+     <!-- footer -->
+     <footer>
+        <p>&copy; 2034 Park. All rights reserved.</p>
+        <!-- footer main box -->
+        <div class="foot-content">
+            <!-- contact info and directories -->
+            <div class="contentleft">
+                <div class="contactinfo">
+                    <a href="contact.html"><h2>Contact Me!</h2></a>
+                    <a href="mailto:example@example.com"><p>Parky@mail.com</p></a>
+                    <p>+65 12345678</p>
+                    <a href="#"><p>HermesDronies.com.gov.air</p></a>
+                </div>
+                <!-- directory to different pages -->
+                <div class="directory">
+                    <h2>Site</h2>
+                    <a href="index.html"><p>Home</p></a>
+                    <a href="about.html"><p>About</p></a>
+                    <a href="media.html"><p>Projects</p></a>
+                    <a href="projects.html"><p>Personal</p></a>
+                    <a href="contact.html"><p>Contacts</p></a>
+                </div>
+            </div>
+            <!-- right content -->
+            <div class="contentright">
+                <h2>Socials</h2>
+                <!-- socials links -->
+                <div class="socials">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="assets/Instagrm.png">
+                    </a>
+                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">
+                        <img src="assets/Facebook.png" target="_blank">
+                    </a>
+                    <a href="https://www.tiktok.com/en/" target="_blank">
+                        <img src="assets/Tikgok.png">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="assets/youtoof.png">
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <!-- end of main box -->
+    </footer>
+    <!-- end of footer -->
+</body>
+</html>

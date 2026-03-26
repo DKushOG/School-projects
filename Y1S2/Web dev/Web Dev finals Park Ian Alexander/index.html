@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- javascript helpers and animations -->
+    <script src="Javascript_helpers/dropMenu.js"></script>
+    <script src="Javascript_helpers/contentAppear.js"></script>
+    <script src="Javascript_helpers/progresscircle.js"></script>
+    <title>Home - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="headerleft">
+            <!-- logo links back to main index -->
+            <a href="index.html">
+                <img src="assets/hermeslogo.png" alt="Logo">
+            </a>
+        </div>
+        <!-- navbar with links to the other pages -->
+        <nav>
+            <!-- initally hidden menu toggle button for small viewports -->
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- end of header -->
+    <!-- main index -->
+    <main id="index">
+        <!-- main index section with animation -->
+        <section id="tracking-in-expand" class="intro">
+            <!-- header -->
+            <h1>Welcome to my Professional Portfolio</h1>
+            <!-- introduction container -->
+            <div class="introduction">
+                <!-- first photo element (initally hidden) -->
+                <div class="profilephoto1">
+                    <img src="assets/Profilepic.jpg">
+                </div>
+                <!-- text box container for my short intro statement -->
+                <div class="introtext">
+                    <h2>Ian Park</h2>
+                    <h3>About Me</h3>
+                    <p>I am a Computer Scientist and engineer based in Singapore <br>Passionate about artificial intelligence and aeronautical engineering, <br>I am the owner and mind behind the creation <br>of Hermes: Autonomous delivery drones.</p>
+                </div>
+                <!-- secont photo element (initally shown) -->
+                <div class="profilephoto2">
+                    <img src="assets/Profilepic.jpg">
+                </div>
+            </div>
+            <!-- end of intro container -->
+             <!-- links to about and report -->
+            <div class="aboutlink">
+                <a href="about.html"><h1>Learn more</h1></a>
+                <a href="report.html" target="_blank"><h1>Report</h1></a>
+            </div>
+            <!-- GIF container -->
+            <!-- GIF source: https://699pic.com/tupian-401454899.html -->
+            <div class="bannergif">
+                <img src="assets/planegif.gif">
+            </div>
+            <!-- end of GIF container -->
+        </section>
+        <!-- end of section -->
+    </main>
+
+     <!-- footer -->
+     <footer>
+        <p>&copy; 2034 Park. All rights reserved.</p>
+        <!-- footer main box -->
+        <div class="foot-content">
+            <!-- contact info and directories -->
+            <div class="contentleft">
+                <div class="contactinfo">
+                    <a href="contact.html"><h2>Contact Me!</h2></a>
+                    <a href="mailto:example@example.com"><p>Parky@mail.com</p></a>
+                    <p>+65 12345678</p>
+                    <a href="#"><p>HermesDronies.com.gov.air</p></a>
+                </div>
+                <!-- directory to different pages -->
+                <div class="directory">
+                    <h2>Site</h2>
+                    <a href="index.html"><p>Home</p></a>
+                    <a href="about.html"><p>About</p></a>
+                    <a href="media.html"><p>Projects</p></a>
+                    <a href="projects.html"><p>Personal</p></a>
+                    <a href="contact.html"><p>Contacts</p></a>
+                </div>
+            </div>
+            <!-- right content -->
+            <div class="contentright">
+                <h2>Socials</h2>
+                <!-- socials links -->
+                <div class="socials">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="assets/Instagrm.png">
+                    </a>
+                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">
+                        <img src="assets/Facebook.png" target="_blank">
+                    </a>
+                    <a href="https://www.tiktok.com/en/" target="_blank">
+                        <img src="assets/Tikgok.png">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="assets/youtoof.png">
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <!-- end of main box -->
+    </footer>
+    <!-- end of footer -->
+</body>
+</html>

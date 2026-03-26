@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- javascript helpers and animations -->
+    <script src="Javascript_helpers/dropMenu.js"></script>
+    <script src="Javascript_helpers/projectscroll.js"></script>
+    <script src="Javascript_helpers/contentAppear.js"></script>
+    <title>Contact - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="headerleft">
+            <!-- logo links back to main index -->
+            <a href="index.html">
+                <img src="assets/hermeslogo.png" alt="Logo">
+            </a>
+        </div>
+        <!-- navbar with links to the other pages -->
+        <nav>
+            <!-- initally hidden menu toggle button for small viewports -->
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- end of header -->
+    <!-- contacts main -->
+    <main id="contact-content">
+        <!-- main contact section -->
+        <section class="contact">
+            <!-- contact header banner -->
+            <div class="contact-banner">
+                <h1>Contacts? <br>Thought you'd never ask!</h1>
+            </div>
+            <!-- contact image links and animated propellor images -->
+            <div class="contact-item">
+                <div class="contact-item item1">
+                    <a href="https://sg.linkedin.com/" target="_blank">
+                        <img src="assets/prop4.png">
+                        <p>LinkedIn</p>
+                    </a>
+                </div>
+                <div class="contact-item item2">
+                    <a href="https://www.dji.com/sg" target="_blank">
+                        <img src="assets/prop4.png">
+                        <p>Website</p>
+                    </a>
+                </div>
+                <div class="contact-item item3">
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="assets/prop4.png">
+                        <p>YouTube</p>
+                    </a>
+                </div>
+                <div class="contact-item item4">
+                    <a href="mailto:example@example.com" target="_blank">
+                        <img src="assets/prop4.png">
+                        <p>E-Mail</p>
+                    </a>
+                </div>
+            </div>
+            <!-- header for contact forms -->
+            <div class="contact-form-header">
+                <h3>Send me something!</h3>
+                <p>I might just respond :) </p>
+            </div>
+            <!-- contact form section -->
+            <section class="contact-form">
+                <form class="contact-form" action="mailto:example@example.com" method="post" enctype="text/plain">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" class="inputstyle" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" class="inputstyle" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">Message:</label>
+                        <textarea id="message" class="messagearea" name="message" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </section>
+            <!-- end of contact form -->
+        </section>
+    </main>
+     <!-- footer -->
+     <footer>
+        <p>&copy; 2034 Park. All rights reserved.</p>
+        <!-- footer main box -->
+        <div class="foot-content">
+            <!-- contact info and directories -->
+            <div class="contentleft">
+                <div class="contactinfo">
+                    <a href="contact.html"><h2>Contact Me!</h2></a>
+                    <a href="mailto:example@example.com"><p>Parky@mail.com</p></a>
+                    <p>+65 12345678</p>
+                    <a href="#"><p>HermesDronies.com.gov.air</p></a>
+                </div>
+                <!-- directory to different pages -->
+                <div class="directory">
+                    <h2>Site</h2>
+                    <a href="index.html"><p>Home</p></a>
+                    <a href="about.html"><p>About</p></a>
+                    <a href="media.html"><p>Projects</p></a>
+                    <a href="projects.html"><p>Personal</p></a>
+                    <a href="contact.html"><p>Contacts</p></a>
+                </div>
+            </div>
+            <!-- right content -->
+            <div class="contentright">
+                <h2>Socials</h2>
+                <!-- socials links -->
+                <div class="socials">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="assets/Instagrm.png">
+                    </a>
+                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">
+                        <img src="assets/Facebook.png" target="_blank">
+                    </a>
+                    <a href="https://www.tiktok.com/en/" target="_blank">
+                        <img src="assets/Tikgok.png">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="assets/youtoof.png">
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <!-- end of main box -->
+    </footer>
+</body>
+</html>
+

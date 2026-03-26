@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- javascript helpers and animations -->
+    <script src="Javascript_helpers/dropMenu.js"></script>
+    <script src="Javascript_helpers/contentAppear.js"></script>
+    <script src="Javascript_helpers/personalitemswitcher.js"></script>
+    <title>personal - Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <div class="headerleft">
+            <!-- logo links back to main index -->
+            <a href="index.html">
+                <img src="assets/hermeslogo.png" alt="Logo">
+            </a>
+        </div>
+        <!-- navbar with links to the other pages -->
+        <nav>
+            <!-- initally hidden menu toggle button for small viewports -->
+            <button class="menu-toggle">☰</button>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="media.html">Media</a></li>
+                <li><a href="personal.html">Personal</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- end of header -->
+     <!-- personal main -->
+    <main id="personal">
+        <!-- personal content section -->
+        <section class="personal">
+            <!-- header -->
+            <h1>Personal Life</h1>
+            <!-- first project item (initally shown) -->
+            <div class="project-item1 show">
+                <h2>My Inspiration</h2>
+                <div class="item1content">
+                    <div class="photocontainer">
+                        <img src="assets/dadyoung.JPG">
+                        <img src="assets/Dadold.JPG">
+                    </div>
+                    <div class="textcontainer">
+                        <p>My inspiration to create Hermes came from young, where I was always interested in aircraft. I built and flew radio controlled aircraft with my father since I was a kid, and am proud to be able to translate the skills I had aquired into a business model that I am passionate about</p>
+                    </div>
+                </div>
+            </div>
+            <!-- second project item(initally hidden) -->
+            <div class="project-item2">
+                <h2>My Abilities</h2>
+                <div class="item2content">
+                    <div class="photocontainer">
+                        <img src="assets/Catapoot.JPG">
+                        <img src="assets/Plane.JPG">
+                    </div>
+                    <div class="textcontainer">
+                        <p>Before working on building Hermes, I was introduced to aeronautical engineering in Singapore Polytechnic, which got the ball rolling in terms of honing my practical skills in electronics, prototyping and building. I then moved on to UOL computer science in 2023, where my interest in Artificial Intelligence and machine learning peaked and ended up being the catalyst to me developing the automated drone service thousands of people use every day.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- button to toggle which project item is shown -->
+            <button id="toggleButton">Switch Project</button>
+        </section>
+        <!-- end of personal content section -->
+    </main>
+     <!-- footer -->
+     <footer>
+        <p>&copy; 2034 Park. All rights reserved.</p>
+        <!-- footer main box -->
+        <div class="foot-content">
+            <!-- contact info and directories -->
+            <div class="contentleft">
+                <div class="contactinfo">
+                    <a href="contact.html"><h2>Contact Me!</h2></a>
+                    <a href="mailto:example@example.com"><p>Parky@mail.com</p></a>
+                    <p>+65 12345678</p>
+                    <a href="#"><p>HermesDronies.com.gov.air</p></a>
+                </div>
+                <!-- directory to different pages -->
+                <div class="directory">
+                    <h2>Site</h2>
+                    <a href="index.html"><p>Home</p></a>
+                    <a href="about.html"><p>About</p></a>
+                    <a href="media.html"><p>Projects</p></a>
+                    <a href="projects.html"><p>Personal</p></a>
+                    <a href="contact.html"><p>Contacts</p></a>
+                </div>
+            </div>
+            <!-- right content -->
+            <div class="contentright">
+                <h2>Socials</h2>
+                <!-- socials links -->
+                <div class="socials">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="assets/Instagrm.png">
+                    </a>
+                    <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F">
+                        <img src="assets/Facebook.png" target="_blank">
+                    </a>
+                    <a href="https://www.tiktok.com/en/" target="_blank">
+                        <img src="assets/Tikgok.png">
+                    </a>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="assets/youtoof.png">
+                    </a> 
+                </div>
+            </div>
+        </div>
+        <!-- end of main box -->
+    </footer>
+    <!-- end of footer -->
+</body>
+</html>
