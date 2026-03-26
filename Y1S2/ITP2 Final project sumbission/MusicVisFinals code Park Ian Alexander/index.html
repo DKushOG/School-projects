@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- css for the soundbar -->
+    <style>
+      body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #soundBar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    #fileInput, #playbackButton, #songSlider, #volumeSlider 
+    {
+      margin: 0 10px;
+    }
+    .volume 
+    {
+      margin: 0 10px;
+    }
+    #visualisationMenu 
+    {
+      position: absolute;
+      top: 50px; /* Adjust based on your needs */
+      left: 100px; /* Adjust based on your needs */
+      background-color:  lightseagreen;
+      border: solid 4px white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none; /* Hidden by default */
+      z-index: 1000; /* Ensure it appears above other elements */
+    }
+    #visualisationMenu ul 
+    {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    #visualisationMenu li 
+    {
+      margin: 10px 0;
+    }
+    #visualisationMenu li a 
+    {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+    }
+    #visualisationMenu li a:hover 
+    {
+      color: darkblue;
+    }
+
+    #promptText 
+    {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: transparent;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      display: block; /* Display by default */
+      z-index: 1000; /* Ensure it appears above other elements */
+      font-size: larger;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    button
+    {
+      border-radius: 10px;
+      background-image: linear-gradient(to left, white, cyan);
+    }
+    </style>
+    <script src="lib/p5.min.js"></script>
+    <script src="lib/p5.sound.js"></script>
+    <script src="lib/p5.gui.js"></script>
+    <script src="lib/quicksettings.js"></script>
+    
+    <script src="sketch.js"></script>
+    <script src="controlsAndInput.js"></script>
+    <script src="fullscreenbutton.js"></script>
+    <script src="visualisations.js"></script>
+    <!-- extensions added or modified-->
+    <script src="blockMidHighLow.js"></script>
+    <script src="ridgePlots.js"></script>
+    <script src="spectrogramview.js"></script>
+    <script src="rainbowcube.js"></script>
+    <script src="spectrum2.js"></script>
+    <script src="wavepattern2.js"></script>
+    <script src="converginglines.js"></script>
+
+    <!-- existing extensions -->
+    <script src="needles.js"></script>
+    <script src="wavepattern.js"></script>
+    <script src="spectrum.js"></script>
+
+
+
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+  </head>
+  <body>
+    <!-- soundbar drawing -->
+    <div id="soundBar">
+      <select id="fileSelect">
+        <!-- drop menu for up to 10 songs -->
+        <option>Choose Track</option>
+        <option value="assets/stomper_reggae_bit.mp3">Default</option>
+        <option value="assets/Bass_test.mp3">Bass Test</option>
+        <option value="assets/Dolby_Atmos_5.1_surround_Sound_Test.mp3">Dolby Surround Sound Test</option>
+        <option value="assets/Journey_Destiny2.mp3">Journey - Destiny 2</option>
+        <option value="assets/Deep_stone_lullaby_Destiny2.mp3">DSL - Destiny 2</option>
+        <option value="assets/Perserverate_Destiny2.mp3">Perserverate - Destiny2</option>
+        <option value="assets/Driftveil_City_pokemonblackwhite.mp3">Driftveil City - Pokemon</option>
+        <option value="assets/Somebody_That_I_Used_To_Know_Gotye.mp3">Somebody That I Used To Know - Gotye</option>
+        <option value="assets/Megalovania_Undertale.mp3">Megalovania - Undertale</option>
+        <option value="assets/Undertale_Bonetrousle.mp3">Bonetrousle - Undertale</option>
+      </select>
+
+      <button id="playbackButton">Play/Pause</button>
+      <input type="range" id="songSlider" min="0" max="100" value="0">
+      <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+
+       <!-- Volume slider added -->
+      <label class="volume" for="volumeSlider">Volume:</label>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+
+      <button id="fullscreenButton">Toggle Fullscreen</button>
+    </div>
+    <div id="visualisationMenu">
+      <ul>
+        <!-- Menu items will be populated by JavaScript -->
+      </ul>
+    </div>
+
+    <!-- Text prompt -->
+  <div id="promptText">Press 'spacebar' to open the menu</div>
+
+  </body>
+</html>
