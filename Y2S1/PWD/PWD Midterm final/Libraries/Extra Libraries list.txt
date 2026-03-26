@@ -1,0 +1,9 @@
+#import necessary libraries
+!pip install pdfplumber
+!pip install tabula-py
+!pip install pdf2image
+!pip install PyPDF2
+!pip install pytesseract
+!pip install pandas
+!pip install beautifulsoup4 requests pandas
+
